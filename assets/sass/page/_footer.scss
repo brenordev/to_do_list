@@ -1,0 +1,17 @@
+.footer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 4rem;
+
+    &__copyright{
+        color: #CCC;
+    }
+
+    &__btn--github{
+        color: $secundary-color;
+        font-size: 2rem;
+
+       
+    }
+}

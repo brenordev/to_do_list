@@ -1,0 +1,17 @@
+@keyframes balance {
+    0%{
+        transform: translateY(-2px);
+        transform: rotate(15deg);
+    }
+    50%{
+        transform: scale(1.2);      
+    }
+    75%{
+        transform: translateY(6); 
+        transform: rotate(-15deg);      
+    }
+    100%{
+        transform: translateY(0px);  
+        
+    }
+}

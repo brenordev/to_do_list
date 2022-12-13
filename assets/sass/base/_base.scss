@@ -1,0 +1,26 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    font-family: 'Poppins', sans-serif;
+    outline: none;
+}
+
+html, body{
+    overflow-X: hidden;
+    background-color: $primary-color;
+    cursor: default;    
+}
+main{
+    max-width: 1280px;
+    width: 100%;
+    min-height: 100vh;
+    padding: 0 1%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+}

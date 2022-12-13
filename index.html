@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="PT-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="shortcut icon" href="./assets/images/icon_list.png" type="image/x-icon">
+  <link rel="stylesheet" href="./assets/css/style.css" />
+  <title>Lista de Tarefas</title>
+</head>
+
+<body>
+  <main class="main">
+    <div class="container">
+      <div class="container__display">
+        <div class="container__display--hour">
+          <span id="hour"></span>
+          <span class="unit-of-time">Hora(s)</span>
+        </div>
+        <div class="container__display--minute">
+          <span id="minute"></span>
+          <span class="unit-of-time">Minuto(s)</span>
+
+        </div>
+        <div class="container__display--second">
+          <span id="second"></span>
+          <span class="unit-of-time">Segundo(s)</span>
+        </div>
+      </div>
+      <div class="container__greeting-message">
+        <span id="message"></span>
+      </div>
+
+    </div>
+    <div class="todolist">
+      <div class="todolist__top">
+        <input type="text" class="todolist__top--input" placeholder="Nova Tarefa" id="inputTask">
+        <button class="todolist__button btn btnAdd" id="btnAddNewTask"><i class="fa-solid fa-plus"></i></button>
+      </div>
+      <ul class="todolist__list" id="listTasks">
+        <li class="todolist__list__item" id="itemList">
+          <span class="todolist__list__item--text">Adicionar horário em que a tarefa foi adicionada</span>
+          <button class="todolist__button btn btnRemove" id="btnRemoveTask"><i class="fa-solid fa-trash"></i></button>
+        </li>
+        <li class="todolist__list__item" id="itemList">
+          <span class="todolist__list__item--text">Botão de remover tarefa funcional</span>
+          <button class="todolist__button btn btnRemove" id="btnRemoveTask"><i class="fa-solid fa-trash"></i></button>
+        </li>
+        <li class="todolist__list__item" id="itemList">
+          <span class="todolist__list__item--text">Salvar tarefas em LocalStorage</span>
+          <button class="todolist__button btn btnRemove" id="btnRemoveTask"><i class="fa-solid fa-trash"></i></button>
+        </li>
+      </ul>
+    </div>
+    <footer class="footer">
+      <p class="footer__copyright">Todos os Direitos Reservados &copy;</p>
+      
+    </footer>
+    
+  </main>
+  <a href="https://github.com/brenordev" class="btn-github " target="_blank">
+    <i class="fa-brands fa-github icon" ></i>
+  </a>
+</body>
+<script src="./assets/js/time.js"></script>
+<script src="./assets/js/todo.js"></script>
+
+</html>

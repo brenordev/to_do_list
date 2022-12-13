@@ -1,0 +1,207 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap");
+@keyframes balance {
+  0% {
+    transform: translateY(-2px);
+    transform: rotate(15deg); }
+  50% {
+    transform: scale(1.2); }
+  75% {
+    transform: translateY(6);
+    transform: rotate(-15deg); }
+  100% {
+    transform: translateY(0px); } }
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+  font-family: 'Poppins', sans-serif;
+  outline: none; }
+
+html, body {
+  overflow-X: hidden;
+  background-color: #151515;
+  cursor: default; }
+
+main {
+  max-width: 1280px;
+  width: 100%;
+  min-height: 100vh;
+  padding: 0 1%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative; }
+
+.btn {
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  transition: all .5s ease;
+  border-radius: 3px; }
+  .btn i {
+    color: #8758FF; }
+  .btn:hover {
+    background-color: #8758FF;
+    border: 1px solid #EFEFEF; }
+    .btn:hover i {
+      color: #EFEFEF; }
+
+.btnAdd {
+  position: absolute;
+  right: 32px;
+  top: 18px; }
+  .btnAdd:hover {
+    transform: scale(1.05); }
+
+.btnRemove {
+  position: absolute;
+  right: 5px; }
+  .btnRemove:hover {
+    animation: balance .3s ease; }
+
+.btn-github {
+  width: 150px;
+  padding: 10px 0 30px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  transform: rotate(-45deg);
+  transition: all .3s ease;
+  background-color: #EFEFEF;
+  color: #323232;
+  position: fixed;
+  right: -50px;
+  bottom: -20px;
+  transition: all .5s ease; }
+  .btn-github:hover {
+    background-color: #8758FF;
+    color: #EFEFEF; }
+
+.container {
+  display: flex;
+  flex-direction: column;
+  padding-top: 4rem; }
+  .container__display {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5rem;
+    font-size: 3rem;
+    font-weight: 600; }
+    .container__display--hour, .container__display--minute, .container__display--second {
+      color: #8758FF;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: relative; }
+    .container__display--hour::after, .container__display--minute::after {
+      content: ':';
+      position: absolute;
+      right: -3rem;
+      transform: scale(0.5); }
+    .container__display .unit-of-time {
+      font-size: .9rem;
+      color: #323232;
+      font-weight: 400; }
+  .container__greeting-message {
+    height: 5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #EFEFEF;
+    font-weight: bold;
+    font-size: 1.1rem;
+    letter-spacing: 1px; }
+
+.todolist {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  position: relative;
+  padding-right: 10px; }
+  .todolist__top {
+    width: 100%;
+    height: 4rem; }
+    .todolist__top::after {
+      content: '';
+      width: calc(100% - 16px);
+      background-color: #323232;
+      height: 2px;
+      position: relative;
+      display: inline-block;
+      bottom: 5px;
+      left: 0; }
+    .todolist__top--input {
+      max-width: 365px;
+      width: 100%;
+      height: 3rem;
+      padding: 5px;
+      background-color: transparent;
+      border: none;
+      border: 2px solid #8758FF;
+      font-weight: 700;
+      color: #8758FF;
+      transition: all .5s ease; }
+      .todolist__top--input::placeholder {
+        color: #8758FF;
+        font-weight: 700;
+        transition: all .5s ease; }
+      .todolist__top--input:focus::placeholder {
+        opacity: .2; }
+  .todolist__list {
+    width: 380px;
+    height: 31rem;
+    position: relative;
+    left: 50%;
+    top: 10px;
+    margin-bottom: 15px;
+    transform: translateX(-50%);
+    overflow-y: auto;
+    padding-right: 10px; }
+    .todolist__list__item {
+      max-width: 365px;
+      width: 100%;
+      min-height: 3rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: relative;
+      padding: 5px;
+      border: 2px solid #323232;
+      transition: all .5s ease;
+      margin-bottom: 10px;
+      cursor: default; }
+      .todolist__list__item:hover {
+        border: 2px solid rgba(135, 88, 255, 0.5); }
+      .todolist__list__item--text {
+        font-size: .8rem;
+        font-weight: 700;
+        color: #323232; }
+
+.todolist__list::-webkit-scrollbar {
+  width: 5px;
+  margin: 0 10px; }
+
+.todolist__list::-webkit-scrollbar-thumb {
+  background-color: #8758FF;
+  border-radius: 20px; }
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 4rem; }
+  .footer__copyright {
+    color: #CCC; }
+  .footer__btn--github {
+    color: #8758FF;
+    font-size: 2rem; }
