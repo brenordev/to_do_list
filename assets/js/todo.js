@@ -4,7 +4,17 @@ const removeTask = document.querySelector('#btnRemoveTask');
 const taskList = document.querySelector('#listTasks');
 const taskItem = document.querySelector('#itemList');
 
-function insertItem(){
+function insertItem() {  
+
+    input.addEventListener("keypress", function(e){
+        if(e.key === "Enter"){
+            const addTask = document.querySelector('#btnAddNewTask');
+
+            addTask.click()
+        }
+        
+    })
+
     addTask.addEventListener('click', function(insertItem){
         
         const taskItem = document.createElement('itemList');
@@ -14,23 +24,13 @@ function insertItem(){
                 <button class="todolist__button btn btnRemove" id="btnRemoveTask"><i class="fa-solid fa-trash"></i></button>
             </li>
         `
-        if(input.value === ""){
+        if(input.value === ''){
             alert('Não é possível adicionar tarefa com o campo vazio!')
             return;
         }
-        input.value == "";
+        input.value = "";
         taskList.appendChild(taskItem);
-        
-    })
-    
+    })    
 }
-insertItem();
 
-    function addTaskItemKeyEnter(event){
-        if(event.key === "Enter"){
-            insertItem();
-            return;
-            console.log("Enter pressionado")
-        }
-    }
-    addTaskItemKeyEnter()
+insertItem();
