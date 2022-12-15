@@ -1,15 +1,18 @@
 
 .container{
+    width: 100%;
     display: flex;
     flex-direction: column;
     padding-top: 4rem;
+    padding: 4rem 10px 0 10px;
     
     &__display{
-        width: 100%;
+        // max-width: 1400px;
+        max-width: 100%;
         display: flex;
         justify-content: center;
         align-items: center;
-        gap: 5rem;
+        gap: 2rem;
         font-size: 3rem;
         font-weight: 600;
 
@@ -27,7 +30,7 @@
         &--minute::after{
             content: ':';
             position: absolute;
-            right: -3rem;
+            right: -1.5rem;
             transform: scale(.5);
         }
         .unit-of-time{

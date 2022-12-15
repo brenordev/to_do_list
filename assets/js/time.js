@@ -19,7 +19,7 @@ const clock = setInterval(function time() {
   } else {
     greetingMessagem.innerHTML =
       'Boa Noite <i class="fa-solid fa-cloud-moon"></i>';
-    greetingMessagem.style.color = "#3F3B6C";
+    greetingMessagem.style.color = "#472183";
   }
 
   function timeFormated(time) {
@@ -29,4 +29,4 @@ const clock = setInterval(function time() {
   displayHour.innerHTML = `${timeFormated(hour)}`;
   displayMinute.innerHTML = `${timeFormated(minute)}`;
   displaySecond.innerHTML = `${timeFormated(second)}`;
-});
+}, 1000);
