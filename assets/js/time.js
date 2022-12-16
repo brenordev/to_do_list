@@ -1,7 +1,9 @@
 const displayHour = document.querySelector("#hour");
 const displayMinute = document.querySelector("#minute");
 const displaySecond = document.querySelector("#second");
-const greetingMessagem = document.querySelector("#message");
+const greetingMessage = document.querySelector("#message");
+const displayDate = document.querySelector('#dateItemList');
+
 
 const clock = setInterval(function time() {
   let dateToday = new Date();
@@ -10,16 +12,18 @@ const clock = setInterval(function time() {
   let second = dateToday.getSeconds();
 
   if (hour >= 6 && hour < 13) {
-    greetingMessagem.innerHTML = 'Bom Dia <i class="fa-regular fa-sun"></i>';
-    greetingMessagem.style.color = "#FFD384";
-  } else if (hour >= 13 && hour <= 18) {
-    greetingMessagem.innerHTML =
+    greetingMessage.innerHTML = 'Bom Dia <i class="fa-regular fa-sun"></i>';
+    greetingMessage.style.color = "#FFD384";
+
+  } else if (hour >= 13 && hour <= 18 && minute <= 30 ) {
+    greetingMessage.innerHTML =
       'Boa Tarde <i class="fa-solid fa-cloud-sun"></i>';
-    greetingMessagem.style.color = "#FEB139";
+    greetingMessage.style.color = "#FEB139";
+
   } else {
-    greetingMessagem.innerHTML =
+    greetingMessage.innerHTML =
       'Boa Noite <i class="fa-solid fa-cloud-moon"></i>';
-    greetingMessagem.style.color = "#472183";
+    greetingMessage.style.color = '#434242';
   }
 
   function timeFormated(time) {
@@ -29,4 +33,7 @@ const clock = setInterval(function time() {
   displayHour.innerHTML = `${timeFormated(hour)}`;
   displayMinute.innerHTML = `${timeFormated(minute)}`;
   displaySecond.innerHTML = `${timeFormated(second)}`;
+
 }, 1000);
+
+

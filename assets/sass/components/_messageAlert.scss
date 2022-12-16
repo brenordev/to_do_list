@@ -1,0 +1,25 @@
+.message-alert{
+    max-width: 350px;
+    width: 100%;
+    padding: 5px;
+    border: 3px solid $secundary-color;
+    background-color: $primary-color;
+    position: absolute;
+    left: 50%;
+    top: 25px;
+    z-index: 2;
+    transform: translateX(-50%);
+    animation: messageAlert 1s ease;
+    text-align: center;
+    display: none;
+    margin: 0 auto;
+    background-blend-mode: overlay;
+
+    &--text{
+        width: 100%;
+        color: $terciary-color;
+        font-size: .8rem;
+        font-weight: 400;
+        letter-spacing: .5px;
+    }
+}

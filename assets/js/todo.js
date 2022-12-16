@@ -24,13 +24,30 @@ function insertItem() {
             </li>
         `;
     if (input.value === "") {
-      alert("Não é possível adicionar tarefa com o campo vazio!");
+      const messageAlertShow = setTimeout(() => {
+        const messageAlert = document.querySelector(".message-alert");
+        messageAlert.innerHTML = `
+          <span class="message-alert--text"> Não é possível adicionar tarefa com o campo vazio! ❌</span>
+          <span class=btnCloseModal>ok<span>
+
+        `;
+        messageAlert.style.display = "block";
+
+        function btnCloseModal() {
+          const btnCloseModal = document.querySelector(".btnCloseModal");
+          btnCloseModal.addEventListener("click", () => {
+            messageAlert.style.display = "none";
+          });
+          return
+        }
+        btnCloseModal();
+      }, 100);
       return;
     }
+
     input.value = "";
     sound.play();
     taskList.appendChild(taskItem);
   });
 }
-
 insertItem();

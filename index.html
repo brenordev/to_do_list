@@ -14,6 +14,8 @@
 </head>
 
 <body>
+  <div class="message-alert">
+  </div>
   <main class="main">
     <div class="container">
       <div class="container__display">
@@ -38,12 +40,13 @@
     </div>
     <div class="todolist">
       <div class="todolist__top">
-        <input type="text" class="todolist__top--input" placeholder="Nova Tarefa" id="inputTask">
-        <button class="todolist__button btn btnAdd" id="btnAddNewTask"><i class="fa-solid fa-plus"></i></button>
+        <input type="text" class="todolist__top--input" placeholder="Nova Tarefa" id="inputTask" autocomplete="off">
+        <button class="todolist__button btn btnAdd" id="btnAddNewTask" title="Botão adicionar tarefa"><i class="fa-solid fa-plus"></i></button>
       </div>
       <ul class="todolist__list" id="listTasks">
         <li class="todolist__list__item" id="itemList">
-          <span class="todolist__list__item--text">Adicionar horário em que a tarefa foi adicionada</span>
+          <span class="todolist__list__item--text">Adicionar horário em que a tarefa foi adicionada </span>
+          <span class="itemList-date" id="dateItemList"> 00:00 - 00/00/0000 </span>
           <button class="todolist__button btn btnRemove" id="btnRemoveTask"><i class="fa-solid fa-trash"></i></button>
         </li>
         <li class="todolist__list__item" id="itemList">
@@ -52,22 +55,20 @@
         </li>
         <li class="todolist__list__item" id="itemList">
           <span class="todolist__list__item--text">Salvar tarefas em LocalStorage</span>
-          <button class="todolist__button btn btnRemove" id="btnRemoveTask"><i class="fa-solid fa-trash"></i></button>
+          <button class="todolist__button btn btnRemove" id="btnRemoveTask" title="Botão remover tarefa"><i class="fa-solid fa-trash"></i></button>
+        </li>
+        <li class="todolist__list__item" id="itemList">
+          <span class="todolist__list__item--text">Corrigir mensagem de input vazio</span>
+          <button class="todolist__button btn btnRemove" id="btnRemoveTask" title="Botão remover tarefa"><i class="fa-solid fa-trash"></i></button>
         </li>
       </ul>
     </div>
     <footer class="footer">
       <p class="footer__copyright">Todos os Direitos Reservados &copy;</p>
-
     </footer>
-
   </main>
-  <!-- <a href="https://github.com/brenordev" class="btn-github " target="_blank">
-    <i class="fa-brands fa-github icon"></i>
-  </a> -->
   <audio src="./assets/sound/sound_added_task.mp3"></audio>
 </body>
 <script src="./assets/js/time.js"></script>
 <script src="./assets/js/todo.js"></script>
-
 </html>
