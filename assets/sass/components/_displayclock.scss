@@ -2,11 +2,17 @@
   width: 100%;
   display: flex;
   flex-direction: column;
-  padding-top: 4rem;
-  padding: 4rem 10px;
+  padding: 1rem 10px;
+
+  &__date{
+    padding: 10px 0;
+    text-align: center;
+    font-weight: 700;
+    color: $secundary-color;
+  }
 
   &__display {
-    // max-width: 1400px;
+    max-width: 1400px;
     max-width: 100%;
     display: flex;
     justify-content: center;
@@ -30,13 +36,14 @@
     &--hour::after,
     &--minute::after {
       content: ":";
-      max-width: 10px;
-      width: 100%;
+      max-width: 100%;
       position: absolute;
       right: -1.5rem;
       transform: scale(0.5);
     }
     .unit-of-time {
+      width: 100%;
+      text-align: center;
       font-size: 0.9rem;
       color: $color-gray-dark;
       font-weight: 400;
@@ -44,14 +51,11 @@
   }
 
   &__greeting-message {
-    height: 5rem;
+    height: 3rem;
     display: flex;
     justify-content: center;
     align-items: center;
     color: $terciary-color;
     font-weight: bold;
-    font-size: 1.1rem;
-    letter-spacing: 1px;
-    // padding-top: 3rem;
   }
 }

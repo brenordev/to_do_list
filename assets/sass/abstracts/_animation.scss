@@ -30,15 +30,16 @@
 
 @keyframes messageAlert {
     0% {
-        opacity: 1;
-        transform: scale(.5);
+        transform: translateY(-10px);
     }
     50% {
-      
-
+      transform: rotate(1deg);
     }
     100% {
-        transform: scale(1);
+      transform: translateY(0);
+      transform: rotate(-1deg);
+
+
     }
   }
   

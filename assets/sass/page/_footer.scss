@@ -4,12 +4,20 @@
     align-items: center;
     height: 4rem;
 
-    &__copyright{
-        color: #CCC;
+    &__copyright, 
+    &__developer{
+        color: rgba($terciary-color, .2);
     }
 
-    &__btn--github{
-        color: $secundary-color;
-        font-size: 2rem;
+    &__developer{
+        &--link{
+            color: $secundary-color;
+            transition: all .3s ease;
+
+            &:hover{
+                color: $terciary-color;
+                text-decoration: underline;
+            }
+        }
     }
 }

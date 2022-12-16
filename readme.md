@@ -13,8 +13,8 @@ Este projeto foi desenvolvido para aplicações de estudos em JavaScript e toda 
 ### Tarefas pendente
 - [X] Responsividade.
 - [X] Adicionar a tarefa apertando Enter.
+- [X] Adicionar data no formato DD/MM/YYYY.
 - [ ] Adicionar horário em que a tarefa foi adicionada.
 - [ ] Adicionar funcionalidade ao botão de remover tarefa.
-- [ ] Adicionar data no formato DD/MM/YYYY.
 - [ ] Salvar tarefas em LocalStorage.
 - [ ] Melhorias no código.

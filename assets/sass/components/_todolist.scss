@@ -1,4 +1,7 @@
 .todolist {
+  max-width: 365px;
+  width: 100%;
+  // background-color: red;
   padding: 10px;
   display: flex;
   flex-direction: column;
@@ -91,6 +94,7 @@
         font-weight: 700;
         color: rgba($terciary-color, 0.3);
         transition: all 0.5s ease;
+        text-transform: full-width;
 
         &::selection {
           background-color: $terciary-color;
