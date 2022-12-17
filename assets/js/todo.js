@@ -1,9 +1,12 @@
+import timer from "./time.js";
+
 const input = document.querySelector("#inputTask");
 const addTask = document.querySelector("#btnAddNewTask");
 const removeTask = document.querySelector("#btnRemoveTask");
 const taskList = document.querySelector("#listTasks");
 const taskItem = document.querySelector("#itemList");
 const sound = document.querySelector("audio");
+const dateItemList = document.querySelector("#dateItemList");
 
 function insertItem() {
   input.addEventListener("keypress", function (e) {
@@ -19,13 +22,15 @@ function insertItem() {
     taskItem.innerHTML = `
             <li class="todolist__list__item" id="itemList">
                 <span class="todolist__list__item--text">${input.value}</span>
-                <span class="itemList-date" id="dateItemList"></span>
+                <span class="itemList-date" id="dateItemList">${dateItemList.textContent}</span>
                 <button class="todolist__button btn btnRemove" id="btnRemoveTask"><i class="fa-solid fa-trash"></i></button>
             </li>
         `;
     if (input.value === "") {
       const messageAlertShow = setTimeout(() => {
         const messageAlert = document.querySelector(".message-alert");
+        const removeTask = document.querySelector("#btnRemoveTask");
+
         messageAlert.innerHTML = `
           <span class="message-alert--text"> Não é possível adicionar tarefa com o campo vazio!</span>
           <span class=btnCloseModal>ok<span>
@@ -56,6 +61,10 @@ function insertItem() {
     input.value = "";
     sound.play();
     taskList.appendChild(taskItem);
+
+    localStorage.setItem(taskItem.textContent, dateItemList.innerHTML);
+    const item = localStorage.getItem(taskItem.textContent);
+    console.log(taskItem);
   });
 }
 insertItem();

@@ -2,10 +2,10 @@ const displayHour = document.querySelector("#hour");
 const displayMinute = document.querySelector("#minute");
 const displaySecond = document.querySelector("#second");
 const greetingMessage = document.querySelector("#message");
-const displayDate = document.querySelector('#dateItemList');
-const textDate = document.querySelector('#dateText');
+let textDate = document.querySelector('#dateText');
+let dateItemList = document.querySelector("#dateItemList");
 
-export const clock = setInterval(function time() {
+const clock = setInterval(function time() {
   let dateToday = new Date();
   let hour = dateToday.getHours();
   let minute = dateToday.getMinutes();
@@ -13,11 +13,15 @@ export const clock = setInterval(function time() {
   let dayWeek = dateToday.getDay();
 
   let today = dateToday.getDate();
-  let mounth = dateToday.getMonth();
-  let year = dateToday.getFullYear();
+  let mounth = dateToday.getMonth()+1;
+  let year =  dateToday.getFullYear();
 
-  // textDateTask.innerHTML = `${today.toString}/${mounth.toString}/${year.toString}`;
-  textDate.innerHTML = `${today}/${mounth}/${year}`;
+  if(today || mounth < 10){
+    today = `${0+today}`;
+    mounth = `${0+mounth}`
+  } 
+  
+  dateItemList.innerHTML = String(`${displayHour.innerHTML}:${displayMinute.innerHTML} - ${(today)}/${mounth}/${year}`)
 
   if (hour >= 6 && hour < 13) {
     greetingMessage.innerHTML = 'Bom Dia <i class="fa-regular fa-sun"></i>';
@@ -42,5 +46,7 @@ export const clock = setInterval(function time() {
   displayMinute.innerHTML = `${timeFormated(minute)}`;
   displaySecond.innerHTML = `${timeFormated(second)}`;
 
+  
 }, 1000);
+
 export default {hour, minute, second}
