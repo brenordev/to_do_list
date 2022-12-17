@@ -16,7 +16,7 @@ export const clock = setInterval(function time() {
   let mounth = dateToday.getMonth();
   let year = dateToday.getFullYear();
 
-
+  // textDateTask.innerHTML = `${today.toString}/${mounth.toString}/${year.toString}`;
   textDate.innerHTML = `${today}/${mounth}/${year}`;
 
   if (hour >= 6 && hour < 13) {
