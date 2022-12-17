@@ -5,8 +5,7 @@ const greetingMessage = document.querySelector("#message");
 const displayDate = document.querySelector('#dateItemList');
 const textDate = document.querySelector('#dateText');
 
-
-const clock = setInterval(function time() {
+export const clock = setInterval(function time() {
   let dateToday = new Date();
   let hour = dateToday.getHours();
   let minute = dateToday.getMinutes();
@@ -24,7 +23,7 @@ const clock = setInterval(function time() {
     greetingMessage.innerHTML = 'Bom Dia <i class="fa-regular fa-sun"></i>';
     greetingMessage.style.color = "#FFD384";
 
-  } else if (hour >= 13 || hour <= 18  && minute <= 30 ) {
+  } else if (hour >= 13 && hour <= 19) {
     greetingMessage.innerHTML =
       'Boa Tarde <i class="fa-solid fa-cloud-sun"></i>';
     greetingMessage.style.color = "#FEB139";
@@ -44,5 +43,4 @@ const clock = setInterval(function time() {
   displaySecond.innerHTML = `${timeFormated(second)}`;
 
 }, 1000);
-
-
+export default {hour, minute, second}

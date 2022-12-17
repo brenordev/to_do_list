@@ -300,8 +300,13 @@ main {
   justify-content: space-between;
   align-items: center;
   height: 4rem; }
+  @media screen and (max-width: 768px) {
+    .footer {
+      display: flex;
+      flex-direction: column-reverse; } }
   .footer__copyright, .footer__developer {
-    color: rgba(239, 239, 239, 0.2); }
+    color: rgba(239, 239, 239, 0.2);
+    transition: all .5s ease; }
   .footer__developer--link {
     color: #8758FF;
     transition: all .3s ease; }

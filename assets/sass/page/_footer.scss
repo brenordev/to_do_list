@@ -4,9 +4,15 @@
     align-items: center;
     height: 4rem;
 
+    @media screen and (max-width: 768px) {
+        @include flex-column;
+      }
+
     &__copyright, 
     &__developer{
         color: rgba($terciary-color, .2);
+    transition: all .5s ease;
+
     }
 
     &__developer{
