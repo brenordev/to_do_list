@@ -61,10 +61,6 @@ function insertItem() {
     input.value = "";
     sound.play();
     taskList.appendChild(taskItem);
-
-    localStorage.setItem(taskItem.textContent, dateItemList.innerHTML);
-    const item = localStorage.getItem(taskItem.textContent);
-    console.log(taskItem);
   });
 }
 insertItem();

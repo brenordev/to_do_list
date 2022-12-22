@@ -21,7 +21,8 @@ const clock = setInterval(function time() {
     mounth = `${0+mounth}`
   } 
   
-  dateItemList.innerHTML = String(`${displayHour.innerHTML}:${displayMinute.innerHTML} - ${(today)}/${mounth}/${year}`)
+  textDate.innerHTML = `${today}/${mounth}/${year}`
+  dateItemList.innerHTML = (`${displayHour.innerHTML}:${displayMinute.innerHTML} - ${(today)}/${mounth}/${year}`)
 
   if (hour >= 6 && hour < 13) {
     greetingMessage.innerHTML = 'Bom Dia <i class="fa-regular fa-sun"></i>';
