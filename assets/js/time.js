@@ -28,7 +28,7 @@ const clock = setInterval(function time() {
     greetingMessage.innerHTML = 'Bom Dia <i class="fa-regular fa-sun"></i>';
     greetingMessage.style.color = "#FFD384";
 
-  } else if (hour >= 13 && hour <= 19) {
+  } else if (hour >= 13 && hour < 19) {
     greetingMessage.innerHTML =
       'Boa Tarde <i class="fa-solid fa-cloud-sun"></i>';
     greetingMessage.style.color = "#FEB139";
