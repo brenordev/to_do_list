@@ -17,8 +17,8 @@ const clock = setInterval(function time() {
   let year =  dateToday.getFullYear();
 
   if(today || mounth < 10){
-    today = `${0+today}`;
-    mounth = `${0+mounth}`
+    today = `${'0' + today}`;
+    mounth = `${'0' + mounth}`
   } 
   
   textDate.innerHTML = `${today}/${mounth}/${year}`
