@@ -1,7 +1,6 @@
 .todolist {
   max-width: 365px;
   width: 100%;
-  // background-color: red;
   padding: 10px;
   display: flex;
   flex-direction: column;
@@ -92,9 +91,8 @@
         height: 100%;
         font-size: 0.8rem;
         font-weight: 700;
-        color: rgba($terciary-color, 0.3);
+        color: $secundary-color;
         transition: all 0.5s ease;
-        text-transform: full-width;
 
         &::selection {
           background-color: $terciary-color;
@@ -122,6 +120,6 @@
 .itemList-date {
   margin-top: 5px;
   font-size: 0.7rem;
-  color: rgba($secundary-color, 0.4);
+  color: $color-gray-dark;
   font-weight: bold;
 }

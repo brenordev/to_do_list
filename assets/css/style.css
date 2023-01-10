@@ -243,9 +243,8 @@ main {
         height: 100%;
         font-size: 0.8rem;
         font-weight: 700;
-        color: rgba(239, 239, 239, 0.3);
-        transition: all 0.5s ease;
-        text-transform: full-width; }
+        color: #8758FF;
+        transition: all 0.5s ease; }
         .todolist__list__item--text::selection {
           background-color: #EFEFEF;
           color: #323232; }
@@ -264,7 +263,7 @@ main {
 .itemList-date {
   margin-top: 5px;
   font-size: 0.7rem;
-  color: rgba(135, 88, 255, 0.4);
+  color: #323232;
   font-weight: bold; }
 
 .message__popup {

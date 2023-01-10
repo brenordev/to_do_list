@@ -40,9 +40,11 @@ const clock = setInterval(function time() {
     default:
       break;
   }
-  if (today || mounth < 10) {
-    today = `${"0" + today}`;
-    mounth = `${"0" + mounth}`;
+  if (today || mounth <= 9) {
+    today = `${'0' + today}`;
+    mounth = `${'0' + mounth}`;
+  } else {
+    return;
   }
 
   textDate.innerHTML = `<i class="fa-solid fa-calendar-days"></i> ${weekDay} - ${today}/${mounth}/${year}`;
