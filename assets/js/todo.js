@@ -8,6 +8,7 @@ const taskItem = document.querySelector("#itemList");
 const sound = document.querySelector("audio");
 const dateItemList = document.querySelector("#dateItemList");
 
+
 function insertItem() {
   input.addEventListener("keypress", function (e) {
     if (e.key === "Enter") {

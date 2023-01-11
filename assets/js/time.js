@@ -15,15 +15,16 @@ const clock = setInterval(function time() {
   let year = dateToday.getFullYear();
   let weekDay = dateToday.getDay();
 
+
   switch (weekDay) {
     case (weekDay = 0):
       weekDay = "Domingo";
       break;
     case (weekDay = 1):
-      weekDay = "Segunda";
+      weekDay = "Segunda-Feira";
       break;
     case (weekDay = 2):
-      weekDay = "Terça-Ferira";
+      weekDay = "Terça-Feira";
       break;
     case (weekDay = 3):
       weekDay = "Quarta-Feira";
@@ -40,14 +41,16 @@ const clock = setInterval(function time() {
     default:
       break;
   }
-  if (today || mounth <= 9) {
+  // today = 9
+  console.log(today)
+  if (today < 10) {
     today = `${'0' + today}`;
-    mounth = `${'0' + mounth}`;
-  } else {
-    return;
-  }
+  } else if (mounth < 10) {
+      mounth = `${'0' + mounth}`
+    }
 
-  textDate.innerHTML = `<i class="fa-solid fa-calendar-days"></i> ${weekDay} - ${today}/${mounth}/${year}`;
+
+  textDate.innerHTML = `${weekDay} - ${today}/${mounth}/${year}`;
   dateItemList.innerHTML = `${displayHour.innerHTML}:${displayMinute.innerHTML} - ${today}/${mounth}/${year}`;
 
   if (hour >= 6 && hour < 13) {
