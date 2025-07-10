@@ -1,81 +1,59 @@
 <!DOCTYPE html>
-<html lang="PT-BR">
+<html lang="pt-BR">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
-    integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link rel="shortcut icon" href="./assets/images/icon.png" type="image/x-icon">
-  <link rel="stylesheet" href="./assets/css/style.css" />
-  <title>To Do List</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Lista de Tarefas</title>
+    <link rel="stylesheet" href="./css/normalize.css">
+    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="./css/responsive.css">
 </head>
 
 <body>
-  <div class="message__popup">
-    <div class="message-alert">
-    </div>
-  </div>
-  <main class="main">
-    <div class="container">
-      <div class="container__date">
-        <span class="container__date-text" id="dateText">
-        </span>
-      </div>
-      <div class="container__display">
-        <div class="container__display--hour">
-          <span id="hour">--</span>
-          <span class="unit-of-time">Hora(s)</span>
+    <main>
+        <div id="time-container" class="time-container">
+            <p id="timeView" class="time-view"><i class="fa-solid fa-cloud-moon"></i></p>
+            <p id="dateView" class="date-view"></p>
         </div>
-        <div class="container__display--minute">
-          <span id="minute">--</span>
-          <span class="unit-of-time">Minuto(s)</span>
+        <div class="container">
+            <form id="form">
+                <input id="inputItem" class="input-item" type="text" placeholder="Adicione um item..." required>
+                <div class="buttons-form">
+                    <button id="addButton" type="submit" class="add-button">
+                        <i class="fa-solid fa-plus"></i>
+                        <p>Adicionar</p>
+                    </button>
+                    <button id="clearButton" class="clear-button" type="button">
+                        <i class="fa-solid fa-eraser"></i> 
+                        <p>Limpar lista</p>
+                    </button>
+                    <button id="sortAlphaBtn" class="sort-alpha-button" type="button">
+                        <i class="fa-solid fa-arrow-down-a-z"></i>
+                    </button>
+                    <button id="filterCompletedBtn" class="filter-completed-button" type="button" disabled>
+                        <i class="fa-solid fa-list-check"></i>
+                    </button>
+                </div>
+            </form>
 
+            <div class="itemCounter">
+                <p id="listItemCounter"></p>
+            </div>
+            <ul id="listItem">
+                <li class="item">
+                </li>
+            </ul>
         </div>
-        <div class="container__display--second">
-          <span id="second">--</span>
-          <span class="unit-of-time">Segundo(s)</span>
-        </div>
-      </div>
-      <div class="container__greeting-message">
-        <span id="message"></span>
-      </div>
-
-    </div>
-    <div class="todolist">
-      <div class="todolist__top">
-        <input type="text" class="todolist__top--input" placeholder="Nova Tarefa" id="inputTask" autocomplete="off">
-        <button class="todolist__button btn btnAdd" id="btnAddNewTask" title="Botão adicionar tarefa"><i class="fa-solid fa-plus"></i></button>
-      </div>
-      <ul class="todolist__list" id="listTasks">
-        <li class="todolist__list__item" id="01">
-          <span class="todolist__list__item--text">Tarefa do Sistema - Teste</span>
-          <span class="itemList-date" id="dateItemList"></span>
-          <button class="todolist__button btn btnRemove" id="btnRemoveTask"><i class="fa-solid fa-trash"></i></button>
-        </li>
-        <li class="todolist__list__item" id="02">
-          <span class="todolist__list__item--text">Botão de remover tarefa funcional</span>
-          <span class="itemList-date" id="dateItemList"></span>
-          <button class="todolist__button btn btnRemove" id="btnRemoveTask"><i class="fa-solid fa-trash"></i></button>
-        </li>
-        <li class="todolist__list__item" id="03">
-          <span class="todolist__list__item--text">Salvar tarefas em LocalStorage</span>
-          <span class="itemList-date" id="dateItemList"></span>
-          <button class="todolist__button btn btnRemove" id="btnRemoveTask" title="Botão remover tarefa"><i class="fa-solid fa-trash"></i></button>
-        </li>
-      </ul>
-    </div>
-    <footer class="footer">
-      <p class="footer__copyright">Todos os Direitos Reservados &copy;</p>
-      <p class="footer__developer">Desenvolvidor por <a href="https://github.com/brenordev" class="footer__developer--link" target="_blank">Brenor.Dev</a></p>
-    </footer>
-  </main>
-  <audio src="./assets/sound/sound_added_task.mp3"></audio>
+    </main>
+    <script type="module" src="./script/main.js"></script>
+    <script type="module" src="./script/clock.js"></script>
+    <script type="module" src="./modules/addItem.js"></script>
+    <script type="module" src="./modules/clearList.js"></script>
+    <script type="module" src="./modules/sortList.js"></script>
 </body>
-<script type="module" src="./assets/js/time.js" ></script>
-<script type="module" src="./assets/js/todo.js"></script>
-<script type="module" src="./assets/js/dateTaskItem.js"></script>
-<script type="module" src="./assets/js//weekDay.js"></script>
+
 </html>

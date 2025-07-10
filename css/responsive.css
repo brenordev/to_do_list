@@ -1,0 +1,21 @@
+@media (max-width: 425px) {
+    button p {
+        display: none;
+    }
+
+    .buttons-form button {
+        padding: 12px 16px;
+    }
+
+    form button {
+        width: 100%;
+    }
+
+    .time-container{
+        align-items: center;
+    }
+
+    main {
+        padding: 0 10%;
+    }
+}

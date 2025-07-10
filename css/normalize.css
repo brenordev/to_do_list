@@ -1,0 +1,141 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+    list-style: none;
+    border: none;
+    /* border: 1px solid red; */
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #F5F7F8;
+}
+
+main {
+    max-width: 480px;
+    min-height: 100vh;
+    padding: 0 2%;
+    display: flex;
+    flex-direction: column;
+}
+
+ul {
+    padding-right: 12px;
+    overflow-y: auto;
+    height: 55vh;
+
+    &::-webkit-scrollbar {
+        width: 3px;      
+    }
+
+    &::-webkit-scrollbar-track {
+        background: #F5F7F8;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        border-radius: 1px;
+        border: 1px solid #A6AEBF;
+    }
+}
+
+ul li {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 12px 8px 12px;
+    border-radius: 8px;
+    margin-bottom: 12px;
+    border: 1px dashed #A6AEBF;
+    transition: all .3s ease-in;
+}
+
+ul li:hover {
+    transform: translateY(-1px);
+    border-color: #323643;
+}
+
+form {
+    padding-right: 12px;
+}
+
+input {
+    width: 100%;
+    border: 1px solid #A6AEBF;
+    background-color: none;
+
+    &:focus::placeholder {
+        opacity: .2;
+        transition: all .4s ease;
+    }
+
+    &:focus {
+        border-color: #323643;
+    }
+}
+
+input, button {
+    padding: 8px 16px;
+    outline: none;
+    border-radius: 8px;
+    font-size: 1.4rem;
+    white-space:nowrap;
+}
+
+button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    color: #FFF;
+    cursor: pointer;
+    transition: all .5s ease;
+
+    & span{
+        font-size: 1.2rem;
+    }
+
+    &:hover {
+       transform: scale(1.03);
+    }
+    
+    &.add-button {
+    background-color: #50D890; }
+
+    &.clear-button {
+    background-color: #FF1E00; }
+
+    &.sort-alpha-button,
+    &.filter-completed-button {
+    background-color: #323643; }
+
+    &.remove-item-button {
+    color: #A6AEBF;
+    background: none;
+
+        &:hover {
+            background-color: #FF1E00;
+            color: #FFF;
+        }
+    }
+
+    &.completed-item-button {
+        background-color: #50D890;
+    }
+}
+
+button:disabled {
+  background-color: #ccc; 
+  color: #666; 
+  cursor: not-allowed; 
+  opacity: 0.6; 
+}
