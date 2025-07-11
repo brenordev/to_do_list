@@ -1,4 +1,4 @@
-import {items} from '../script/main.js'
+import { items } from '../script/main.js'
 
 const counter = document.getElementById('listItemCounter')
 

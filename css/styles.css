@@ -76,11 +76,11 @@
 
 .completed {
     box-shadow: inset 100px 0px 0px -94px #50D890;
-    background-color: #E4EFE7;
+    background-color: #E4EFE7 !important;
     transition: all 1s ease;
     
     & p {
-        color: #A6AEBF !important;
+        color: #A6AEBF;
         text-decoration:line-through;
     }
 }

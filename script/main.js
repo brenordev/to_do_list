@@ -3,6 +3,7 @@ const listItem = document.getElementById('listItem')
 import { getItemCount } from '../modules/itemCount.js'
 
 export let items = []
+
 window.addEventListener('DOMContentLoaded', () => {
     const data = localStorage.getItem('toDoList')
     if (data) {
@@ -40,7 +41,15 @@ export const listRender = () => {
             saveData()
             listRender()
         })
-        listItem.appendChild(li)
+
+        if (item.status) {
+            li.classList.add('completed')
+
+            const iconCompletedItemButton = completedItemButton.querySelector('i')
+            completedItemButton.style.backgroundColor = '#A6AEBF'
+            iconCompletedItemButton.classList.toggle('fa-check')
+            iconCompletedItemButton.classList.toggle('fa-rotate-left')
+        }
 
         // Remove item from list
         const removeItemButton = li.querySelector('#removeItemButton')
@@ -50,6 +59,8 @@ export const listRender = () => {
             listRender()
             console.log('Removeu item')
         })
+
+        listItem.appendChild(li)
     })
 
     saveData()
