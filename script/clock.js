@@ -3,27 +3,27 @@ const dateView = document.getElementById('dateView')
 
 function getPeriodOfDay() {
     const hour = new Date().getHours()
-        if (hour >= 0 && hour < 6) return "madrugada"
-        if (hour >= 6 && hour < 12) return "manhã"
-        if (hour >= 12 && hour < 18) return "tarde"
+    if (hour >= 0 && hour < 6) return "madrugada"
+    if (hour >= 6 && hour < 12) return "manhã"
+    if (hour >= 12 && hour < 18) return "tarde"
     return "noite"
 }
 
-export const getCurrentDate = () => {  
+export const getCurrentDate = () => {
     const weekDay = [
-        'Domingo',
-        'Segunda-Feira',
-        'Terça-Feira',
-        'Quarta-Feira',
-        'Quinta-Feira',
-        'Sexta-Feira',
-        'Sábado'
+        'Domingo • #DomingoéDia',
+        'Segunda-Feira • #ComeçouTudoDeNovo',
+        'Terça-Feira • #VamosDeTerça',
+        'Quarta-Feira • #MetadeDoCaminho',
+        'Quinta-Feira • #PréSexta',
+        'Sexta-Feira • #VemFinaldeSemana',
+        'Sábado • #ModoWeekend'
     ]
 
     const data = new Date()
-    const getWeekDay = data.getDay()
+    let getWeekDay = data.getDay()
     const day = data.getDate()
-    const month = data.getMonth() + 1
+    const month = data.getMonth()
     const year = data.getFullYear()
     const formattedDate = `
         ${day.toString().padStart(2, '0')}/
@@ -35,11 +35,11 @@ export const getCurrentDate = () => {
 
 const getCurrentTime = () => {
     const data = new Date()
-    const formattedTime =  data.toLocaleTimeString()
+    const formattedTime = data.toLocaleTimeString()
     timeView.textContent = formattedTime
 }
 
 getCurrentTime()
 getCurrentDate()
-setInterval(getCurrentTime, 1000) 
+setInterval(getCurrentTime, 1000)
 setInterval(getCurrentDate, 1000) 
