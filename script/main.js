@@ -2,7 +2,7 @@
 const listItem = document.getElementById('listItem')
 import { getItemCount } from '../modules/itemCount.js'
 
-export let items = []
+let items = []
 
 window.addEventListener('DOMContentLoaded', () => {
     const data = localStorage.getItem('toDoList')
@@ -16,9 +16,9 @@ export const saveData = () => {
     localStorage.setItem('toDoList', JSON.stringify(items))
 }
 
-export const listRender = () => {
+export const listRender = (customList = items) => {
     listItem.innerHTML = ''
-    items.forEach((item, index) => {
+    customList.forEach((item, index) => {
         const li = document.createElement('li')
         li.innerHTML = `
             <div class="item-info">
@@ -57,7 +57,6 @@ export const listRender = () => {
             items.splice(index, 1)
             saveData()
             listRender()
-            console.log('Removeu item')
         })
 
         listItem.appendChild(li)
@@ -66,4 +65,4 @@ export const listRender = () => {
     saveData()
     getItemCount()
 }
-
+export { items };
