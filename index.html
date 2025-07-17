@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
         integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="icon" href="./assets/images/icon.png" type="image/x-icon">
     <title>Lista de Tarefas</title>
     <link rel="stylesheet" href="./css/normalize.css">
     <link rel="stylesheet" href="./css/styles.css">
@@ -16,7 +17,7 @@
 <body>
     <main>
         <div id="time-container" class="time-container">
-            <p id="timeView" class="time-view"><i class="fa-solid fa-cloud-moon"></i></p>
+            <p id="timeView" class="time-view"></p>
             <p id="dateView" class="date-view"></p>
         </div>
         <div class="container">
@@ -49,6 +50,10 @@
             </ul>
         </div>
     </main>
+    <button class="btnRepository" id="btnRepository">
+        <img src="./assets/images/github_icon.png" alt="Ícone GitHub">
+        <p>Repositório</p>
+    </button>
     <script type="module" src="./script/main.js"></script>
     <script type="module" src="./script/clock.js"></script>
     <script type="module" src="./modules/addItem.js"></script>

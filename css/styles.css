@@ -47,7 +47,7 @@
 
 #textItem {
     color: #495664;
-    font-size: 1.6rem;
+    font-size: 1.4rem;
     font-weight: 500;
 }
 
@@ -58,6 +58,9 @@
 
 .item-info {
     width: fit-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     margin-right: 8px;
 
      & p {
